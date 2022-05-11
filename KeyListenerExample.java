@@ -1,6 +1,7 @@
 //1st code showing key entered ,pressed,released
 import java.awt.*;    
-import java.awt.event.*;    
+import java.awt.event.*;
+
 // class which inherits Frame class and implements KeyListener interface  
 public class KeyListenerExample extends Frame implements KeyListener {    
 // creating object of Label class   and TextArea class  
@@ -24,7 +25,17 @@ add(area);
 // setting the size, layout and visibility of frame  
         setSize (400, 400);    
         setLayout (null);    
-        setVisible (true);    
+        setVisible (true);
+        
+        addWindowListener (new WindowAdapter()
+        {
+            public void windowClosing(WindowEvent obj)
+            {
+                System.exit(0);
+            }
+        }
+        );
+
     }    
 // overriding the keyPressed() method of KeyListener interface where we set the text of the label when key is pressed  
     public void keyPressed (KeyEvent e) {    
@@ -37,7 +48,9 @@ add(area);
 // overriding the keyTyped() method of KeyListener interface where we set the text of the label when a key is typed  
     public void keyTyped (KeyEvent e) {    
         l.setText ("Key Typed");    
-    }    
+    }
+    
+
   // main method  
     public static void main(String[] args) {    
         new KeyListenerExample();    
