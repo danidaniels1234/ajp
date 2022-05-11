@@ -2,7 +2,7 @@
 import java.awt.*;
 import javax.swing.*;
 import java.awt.event.*;
-public class voteballot extends JFrame{
+class voteballot extends JFrame{
 	JRadioButton rb1,rb2,rb3;
 	JButton btnvote;
 	JLabel L1;
@@ -39,13 +39,13 @@ public class voteballot extends JFrame{
         rb1.setBounds(120, 30, 120, 50);
   
         // Setting Bounds of "jRadioButton2".
-        rb2.setBounds(250, 30, 80, 50);
+        rb2.setBounds(250, 30, 120, 50);
         
      // Setting Bounds of "jRadioButton3".
-        rb3.setBounds(300, 30, 60, 50);
+        rb3.setBounds(380, 30, 120, 50);
         
      // Setting Bounds of "jButton".
-        btnvote.setBounds(125, 90, 80, 30);
+        btnvote.setBounds(250, 90, 80, 30);
   
         // Setting Bounds of JLabel "L2".
         L1.setBounds(20, 30, 150, 50);
@@ -70,6 +70,15 @@ public class voteballot extends JFrame{
         G1.add(rb1);
         G1.add(rb2);
         G1.add(rb3);
+
+        addWindowListener(new WindowAdapter()
+        {
+            public void windowClosing(WindowEvent obj)
+            {
+                System.exit(0);
+            }
+        }
+        );
 	
 	 
 //Adding Listener to JButton.
@@ -104,6 +113,12 @@ btnvote.addActionListener(new ActionListener() {
         JOptionPane.showMessageDialog(voteballot.this, vote);
     }
 });
+
+    // public static void main(String arg[])
+    // {
+    //     new voteballot();
+    // }
+
 }
  }
 class RadioButton {
@@ -113,7 +128,7 @@ class RadioButton {
         voteballot f = new voteballot();
   
         // Setting Bounds of JFrame.
-        f.setBounds(100, 100, 400, 200);
+        f.setBounds(200, 200, 600, 200);
   
         // Setting Title of frame.
         f.setTitle("RadioButtons");
