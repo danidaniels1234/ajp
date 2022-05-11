@@ -1,6 +1,7 @@
 //2nd code to demonstrate mouse clicked,mouse released
 import java.awt.*;  
-import java.awt.event.*;  
+import java.awt.event.*;
+
 public class MouseListenerExample2 extends Frame implements MouseListener{  
     Label l;  
     MouseListenerExample2(){  
@@ -11,7 +12,16 @@ public class MouseListenerExample2 extends Frame implements MouseListener{
         add(l);  
         setSize(300,300);  
         setLayout(null);  
-        setVisible(true);  
+        setVisible(true);
+
+        addWindowListener (new WindowAdapter()
+        {
+            public void windowClosing(WindowEvent obj)
+            {
+                System.exit(0);
+            }
+        });
+
     }  
     public void mouseClicked(MouseEvent e) {  
         l.setText("Mouse Clicked");  
@@ -25,12 +35,12 @@ public class MouseListenerExample2 extends Frame implements MouseListener{
     public void mousePressed(MouseEvent e) {  
         l.setText("Mouse Pressed");  
     }  
-
-
     public void mouseReleased(MouseEvent e) {  
         l.setText("Mouse Released");  
     }  
-public static void main(String[] args) {  
-    new MouseListenerExample2();  
-}  
+
+    public static void main(String[] args)
+    {  
+        new MouseListenerExample2();  
+    }  
 }  
