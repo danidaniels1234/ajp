@@ -27,4 +27,9 @@ public class AWTAccumulatorApplet extends Applet implements ActionListener {
       showStatus("The accumulated sum is: " + sum);
          // show the sum on the status bar of the browser's window
    }
+
+   public static void main(String arg[])
+   {
+       
+   }
 }
